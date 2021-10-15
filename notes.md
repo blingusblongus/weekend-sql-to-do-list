@@ -8,7 +8,7 @@
 [ ] Server
     [ ] GET tasks (send all)
     [ ] POST add task
-    [ ] PUT mark complete (or uncomplete)
+    [ ] PUT mark complete (or incomplete)
     [ ] DELETE remove task
 [ ] Client
     [ ] GET request all tasks
