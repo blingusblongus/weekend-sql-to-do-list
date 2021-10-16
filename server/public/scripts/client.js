@@ -1,8 +1,12 @@
 console.log('js loaded');
+const DateTime = luxon.DateTime;
 
 $(function(){
     console.log('jquery loaded');
     getTasks();
+
+    const dt = DateTime.now();
+    console.log(dt);
 
     //click handlers
     $('#add-task-btn').on('click', addTask);
@@ -48,6 +52,8 @@ function renderTasks(res){
     container.empty();
     
     for(let task of res){
+        // use luxon and split to parse SQL date
+        let date = task.date_due ? DateTime.fromSQL(task.date_due.split('T')[0]) : '';
 
         let html = $(`
         <div class="task">
@@ -57,7 +63,7 @@ function renderTasks(res){
                 ${task.description}
             </div>
             <div class="task-info task-date-due">
-                ${task.date_due}
+                ${date.toLocaleString()}
             </div>
         </div>
         `).data(task);
