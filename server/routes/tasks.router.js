@@ -53,7 +53,10 @@ tasksRouter.delete('/:id', (req, res) => {
 
 tasksRouter.put('/:id', (req, res) => {
     let id = req.params.id;
-    let complete = req.body.complete === 'true' ?  false : true;
+    //flip task status
+    console.log(req.body.complete);
+    console.log(req.body);
+    let complete = req.body.complete // === 'true' ?  false : true;
 
     let queryText = `
     UPDATE tasks

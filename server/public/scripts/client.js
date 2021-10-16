@@ -1,5 +1,6 @@
 console.log('js loaded');
 const DateTime = luxon.DateTime;
+let sortBy = 'date';
 
 $(function(){
     console.log('jquery loaded');
@@ -44,6 +45,24 @@ function addTask() {
 
 function updateStatus() {
     console.log('checkbox clicked');
+    let task = $(this).closest('.task');
+    let id = task.data().id;
+    let checked = task.data().complete;
+
+    console.log(checked);
+
+    $.ajax({
+        method: 'PUT',
+        url: `/tasks/${id}`,
+        data: {
+            complete: !checked
+        }
+    }).then(res => {
+        console.log('PUT success');
+        getTasks();
+    }).catch(err => {
+        console.log('PUT err', err);
+    })
 }
 
 function renderTasks(res){
