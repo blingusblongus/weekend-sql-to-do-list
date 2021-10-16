@@ -1,3 +1,4 @@
+const { response } = require('express');
 const express = require('express');
 const tasksRouter = express.Router();
 const pool = require('../modules/pool.js');
@@ -24,11 +25,31 @@ tasksRouter.post('/', (req, res) => {
     let values = [req.body.description, req.body.complete, req.body.dateDue];
 
     pool.query(queryText, values).then(result => {
+        console.log('add task success')
         res.sendStatus(201);
     }).catch( err => {
+        console.log('add task err');
         res.sendStatus(500);
     });
-})
+});
+
+tasksRouter.delete('/:id', (req, res) => {
+    let id = req.params.id;
+    
+    let queryText = `
+    DELETE FROM tasks
+    WHERE id = $1;`;
+
+    let values = [id];
+
+    pool.query(queryText, values).then(response => {
+        console.log('item deleted from db at id', id)
+        res.sendStatus(204);
+    }).catch(err => {
+        console.log('error in DELETE', err)
+        res.sendStatus(500);
+    });
+});
 
 
 module.exports = tasksRouter;
