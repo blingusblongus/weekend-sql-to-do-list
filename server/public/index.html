@@ -5,8 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="vendors/jquery-3.6.0.min.js"></script>
+    <script src="scripts/client.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+    <div id="input-container">
+        <div class="task">
+            <input type="text" placeholder="Description">
+            <label for="date-due">Date Due:</label>
+            <input type="date" name="date-due" placeholder="Date Due">
+        </div> 
+    </div>
+    <hr>
+    <div id="task-container">
+        <div class="task">
+            <input type="checkbox">
+            <div class="task-info task-description">
+                A Task Example
+            </div>
+            <div class="task-info task-date-due">
+                1/1/11
+            </div>
+        </div>
+    </div>
     
 </body>
 </html>
