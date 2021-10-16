@@ -51,5 +51,25 @@ tasksRouter.delete('/:id', (req, res) => {
     });
 });
 
+tasksRouter.put('/:id', (req, res) => {
+    let id = req.params.id;
+    let complete = req.body.complete === 'true' ?  false : true;
+
+    let queryText = `
+    UPDATE tasks
+    SET complete = $1
+    WHERE id = $2;`;
+
+    let values = [complete, id];
+
+    pool.query(queryText, values).then(result => {
+        console.log('task updated to', complete, 'at id', id);
+        res.sendStatus(200);
+    }).catch(err => {
+        console.log('error updating task at id ', id);
+        res.sendStatus(500);
+    });
+});
+
 
 module.exports = tasksRouter;
