@@ -12,15 +12,16 @@
 <body>
     <div id="input-container">
         <div class="task">
-            <input type="text" placeholder="Description">
+            <input type="text" placeholder="Description" id="description-in">
             <label for="date-due">Date Due:</label>
-            <input type="date" name="date-due" placeholder="Date Due">
+            <input type="date" name="date-due" placeholder="Date Due" id="date-due-in">
         </div> 
+        <button id="add-task-btn">Add Task</button>
     </div>
     <hr>
     <div id="task-container">
         <div class="task">
-            <input type="checkbox">
+            <input type="checkbox" class="task-checkbox">
             <div class="task-info task-description">
                 A Task Example
             </div>

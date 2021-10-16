@@ -3,6 +3,10 @@ console.log('js loaded');
 $(function(){
     console.log('jquery loaded');
     getTasks();
+
+    //click handlers
+    $('#add-task-btn').on('click', addTask);
+    $('#task-container').on('click', '.task-checkbox', updateStatus);
 });
 
 function getTasks(){
@@ -17,6 +21,27 @@ function getTasks(){
     });
 }
 
+function addTask() {
+    $.ajax({
+        method: 'POST',
+        url: '/tasks',
+        data: {
+            description: $('#description-in').val(),
+            dateDue: $('#date-due-in').val(),
+            complete: false
+        }
+    }).then(res => {
+        console.log('task created');
+        getTasks();
+    }).catch(err => {
+        console.log('error creating task', err);
+    })
+}
+
+function updateStatus() {
+    console.log('checkbox clicked');
+}
+
 function renderTasks(res){
     console.log(res);
     let container = $('#task-container');
@@ -26,7 +51,8 @@ function renderTasks(res){
 
         let html = $(`
         <div class="task">
-            <input type="checkbox" ${task.complete ? 'checked' : ''}>
+            <input type="checkbox" class="task-checkbox" 
+            ${task.complete ? 'checked' : ''}>
             <div class="task-info task-description">
                 ${task.description}
             </div>

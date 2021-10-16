@@ -22,13 +22,13 @@ tasksRouter.post('/', (req, res) => {
     INSERT INTO tasks ("description", "complete", "date_due")
     VALUES ($1, $2, $3);`;
 
-    let values = [req.body.description, req.body.complete, req.body.dateDue];
+    let values = [req.body.description, req.body.complete, req.body.dateDue || null];
 
     pool.query(queryText, values).then(result => {
         console.log('add task success')
         res.sendStatus(201);
     }).catch( err => {
-        console.log('add task err');
+        console.log('add task err', err);
         res.sendStatus(500);
     });
 });
