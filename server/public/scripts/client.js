@@ -1,6 +1,6 @@
 console.log('js loaded');
 const DateTime = luxon.DateTime;
-let sortBy = 'date';
+let sortBy = 'complete';
 
 $(function(){
     console.log('jquery loaded');
@@ -17,7 +17,7 @@ $(function(){
 function getTasks(){
     $.ajax({
         method: 'GET',
-        url: '/tasks'
+        url: `/tasks/${sortBy}`
     }).then(res => {
         renderTasks(res);
     }).catch(err => {

@@ -2,11 +2,16 @@ const { response } = require('express');
 const express = require('express');
 const tasksRouter = express.Router();
 const pool = require('../modules/pool.js');
+const tools = require('../modules/tools.js');
 
 // GET all tasks
-tasksRouter.get('/', (req, res) => {
+tasksRouter.get('/:sortBy', (req, res) => {
+    let sortBy = req.params.sortBy;
+    console.log(sortBy);
+    
     let queryText = `
-    SELECT * FROM tasks;`;
+    SELECT * FROM tasks
+    ORDER BY ${tools.sortBySorter(sortBy)}`;
 
     pool.query(queryText).then( result => {
         res.send(result.rows);
