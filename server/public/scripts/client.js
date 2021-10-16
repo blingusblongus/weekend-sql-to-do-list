@@ -1,6 +1,6 @@
 console.log('js loaded');
 const DateTime = luxon.DateTime;
-let sortBy = 'date asc';
+let sortBy = 'Date &darr;';
 
 $(function(){
     console.log('jquery loaded');
@@ -11,8 +11,19 @@ $(function(){
 
     //click handlers
     $('#add-task-btn').on('click', addTask);
+    $('#sort-by-btn').on('click', swapSort);
     $('#task-container').on('click', '.task-checkbox', updateStatus);
 });
+
+function swapSort(){
+    let sortOptions = ['Date &darr;', 'Date &uarr;', 'Complete', 'Incomplete'];
+
+    let index = sortOptions.indexOf(sortBy);
+
+    sortBy = sortOptions[index + 1] || sortOptions[0];
+    $(this).html(sortBy);
+    getTasks();
+}
 
 function getTasks(){
     $.ajax({

@@ -1,16 +1,14 @@
 const tools = {
     sortBySorter: function (crit){
         switch(crit){
-            case 'date asc':
+            case 'Date &uarr;':
                 return '"date_due" ASC;'
-            case 'date desc':
+            case 'Date &darr;':
                 return '"date_due" DESC;'
-            case 'complete':
+            case 'Complete':
                 return '"complete";';
-            case 'complete desc':
+            case 'Incomplete':
                 return '"complete" DESC;';
-            case 'none':
-                return ';'
             default:
                 console.log('sorter error');
         }
