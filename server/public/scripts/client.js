@@ -1,6 +1,6 @@
 console.log('js loaded');
 const DateTime = luxon.DateTime;
-let sortBy = 'complete';
+let sortBy = 'date asc';
 
 $(function(){
     console.log('jquery loaded');
