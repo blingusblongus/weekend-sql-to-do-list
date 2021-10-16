@@ -13,6 +13,7 @@ $(function(){
     $('#add-task-btn').on('click', addTask);
     $('#sort-by-btn').on('click', swapSort);
     $('#task-container').on('click', '.task-checkbox', updateStatus);
+    $('#task-container').on('click', '.task-delete-icon', deleteTask);
 });
 
 function swapSort(){
@@ -76,6 +77,20 @@ function updateStatus() {
     })
 }
 
+function deleteTask() {
+    let id = $(this).closest('.task').data().id;
+
+    $.ajax({
+        method: 'DELETE',
+        url: `/tasks/${id}`
+    }).then(res => {
+        console.log('item deleted');
+        getTasks();
+    }).catch(err => {
+        console.log('could not delete');
+    });
+}
+
 function renderTasks(res){
     console.log(res);
     let container = $('#task-container');
@@ -95,6 +110,7 @@ function renderTasks(res){
             <div class="task-info task-date-due">
                 ${date.toLocaleString()}
             </div>
+            <div class="task-info task-delete-icon">&#10005;</div>
         </div>
         `).data(task);
 
