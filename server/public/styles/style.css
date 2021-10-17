@@ -2,14 +2,40 @@
     --neutral-color: gray;
 }
 
+body {
+    font-family:Arial, Helvetica, sans-serif;
+}
+
 .task {
     border: 1px solid var(--neutral-color);
-    width: auto;
-    display: inline-block;
+    width: 50%;
+    display: flex;
     padding: 10px;
     border-radius: 10px;
+    margin: 5px;
+    margin-left: 25%;
+    justify-content: space-between;
+    align-content: center;
 }
 
 .task-info {
     display: inline;
+    line-height: 20px;
+}
+
+.task-delete-icon {
+    font-size: 150%;
+}
+
+.task-delete-icon:hover {
+    cursor: pointer;
+}
+
+#sort-by-container {
+    display: flex;
+    justify-content: center;
+}
+
+#sort-by-button {
+    margin-left: 20px;
 }
