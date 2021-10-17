@@ -1,9 +1,26 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# SQL To-Do List
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+*Duration: 3 Day Task*
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+A simple task list that supports adding, removing, and marking tasks, as well as sorting them in several ways.
+
+## Screen Shot
+
+## Prerequisites
+
+- Node.js
+
+## Installation
+
+1. Clone and open the repo
+2. Run `npm install` to download the required node modules
+
+## Usage
+
+## Built With
+
+- Express
+- PG
+- Luxon
