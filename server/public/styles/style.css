@@ -1,17 +1,19 @@
 :root {
-    --neutral-color: gray;
-    --bg-color: rgb(213, 213, 233);
-    --inner-primary: rgb(243, 255, 241);
+    --neutral-color: rgb(156, 107, 107);
+    --bg-color: rgb(44, 44, 58);
+    --inner-primary: rgb(251, 255, 241);
 }
 
 body {
     font-family:Arial, Helvetica, sans-serif;
     background-color: var(--bg-color);
+    color: var(--bg-color);
 }
 
 label {
     margin: min(10px);
 }
+
 
 .text-input {
     height: 80%;
@@ -19,7 +21,7 @@ label {
 }
 
 .task {
-    border: 1px solid var(--neutral-color);
+    border: 2px solid var(--neutral-color);
     width: 70%;
     display: flex;
     padding: 10px;
@@ -53,4 +55,11 @@ label {
 
 #sort-by-label {
     margin-right: 20px;
+    font-weight: bold;
+    color: var(--inner-primary)
+}
+
+#title {
+    text-align: center;
+    color: var(--inner-primary);
 }
