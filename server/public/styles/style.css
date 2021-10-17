@@ -4,6 +4,7 @@
     --inner-primary: rgb(251, 255, 241);
     --success: rgb(245, 204, 255);
     --success-dark: rgb(235, 194, 245);
+    --danger: rgb(151, 62, 62);
 }
 
 body {
@@ -42,6 +43,7 @@ label {
 .task-delete-icon:hover {
     cursor: pointer;
     font-size: 180%;
+    color: var(--danger);
 }
 
 .input-container {
@@ -55,7 +57,6 @@ label {
     margin-right: 10px;
     min-width: 30px;
 }
-
 
 #sort-by-container {
     display: flex;
