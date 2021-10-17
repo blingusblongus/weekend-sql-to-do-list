@@ -4,12 +4,12 @@
         - Done
         - Due Date
         - Tags?
-    [ ] Store in database.sql
+    [x] Store in database.sql
 [x] Server
     [x] GET tasks (send all)
     [x] POST add task
     [x] PUT mark complete (or incomplete)
-    [ ] DELETE remove task
+    [x] DELETE remove task
 [x] Client
     [x] GET request all tasks
         [x] Draw list
@@ -17,22 +17,22 @@
         [x] Capture inputs
     [x] PUT 
         [x] Capture ID
-        [ ] Add/Subtract class
+        [x] Add/Subtract class
         [x] Redraw?
-    [ ] DELETE
-        [ ] Capture ID
-[ ] UI
+    [x] DELETE
+        [x] Capture ID
+[x] UI
     [x] Sample List Item
     [x] Hardcode
         [x] List container
-        [ ] Title
+        [x] Title
         [x] Sample Item !!!
-    [ ] Styling
-        [ ] Change Fonts
-        [ ] Background color
-        [ ] Text and bg of tasks
-        [ ] conditional styling
-[ ] README
+    [x] Styling
+        [x] Change Fonts
+        [x] Background color
+        [x] Text and bg of tasks
+        [x] conditional styling
+[x] README
 
 [ ] Extra features
     [ ] Tasks complete/incomplete display
