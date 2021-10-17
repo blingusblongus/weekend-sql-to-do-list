@@ -4,6 +4,7 @@
     --inner-primary: rgb(251, 255, 241);
     --success: rgb(245, 204, 255);
     --success-dark: rgb(235, 194, 245);
+    --completed-primary: rgb(72, 107, 72);
     --danger: rgb(151, 62, 62);
 }
 
@@ -56,6 +57,11 @@ label {
     flex-grow: 1;
     margin-right: 10px;
     min-width: 30px;
+}
+
+.completed {
+    background-color: var(--completed-primary);
+    color: var(--inner-primary);
 }
 
 #sort-by-container {

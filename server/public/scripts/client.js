@@ -50,6 +50,7 @@ function addTask() {
     }).then(res => {
         console.log('task created');
         getTasks();
+        $('.text-input').val('');
     }).catch(err => {
         console.log('error creating task', err);
     })
@@ -113,6 +114,10 @@ function renderTasks(res){
             <div class="task-info task-delete-icon">&#10005;</div>
         </div>
         `).data(task);
+
+        if(task.complete){
+            html.addClass('completed');
+        }
 
         container.append(html);
     }
