@@ -1,9 +1,12 @@
 :root {
     --neutral-color: gray;
+    --bg-color: rgb(213, 213, 233);
+    --inner-primary: rgb(243, 255, 241);
 }
 
 body {
     font-family:Arial, Helvetica, sans-serif;
+    background-color: var(--bg-color);
 }
 
 label {
@@ -26,6 +29,7 @@ label {
     justify-content: space-between;
     align-items: center;
     min-width: 250px;
+    background-color: var(--inner-primary);
 }
 
 .task-info {
