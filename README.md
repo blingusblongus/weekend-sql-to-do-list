@@ -8,6 +8,8 @@ A simple task list that supports adding, removing, and marking tasks, as well as
 
 ## Screen Shot
 
+![task list screenshot]('./images/screenshot.png');
+
 ## Prerequisites
 
 - Node.js
