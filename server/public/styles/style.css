@@ -6,16 +6,26 @@ body {
     font-family:Arial, Helvetica, sans-serif;
 }
 
+label {
+    margin: min(10px);
+}
+
+.text-input {
+    height: 80%;
+    align-self: center;
+}
+
 .task {
     border: 1px solid var(--neutral-color);
-    width: 50%;
+    width: 70%;
     display: flex;
     padding: 10px;
     border-radius: 10px;
     margin: 5px;
-    margin-left: 25%;
+    margin-left: 15%;
     justify-content: space-between;
-    align-content: center;
+    align-items: center;
+    min-width: 250px;
 }
 
 .task-info {
@@ -34,8 +44,9 @@ body {
 #sort-by-container {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-#sort-by-button {
-    margin-left: 20px;
+#sort-by-label {
+    margin-right: 20px;
 }
